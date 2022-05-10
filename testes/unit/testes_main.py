@@ -1,3 +1,5 @@
+import pytest
+
 from main import somar, subtrair, multiplicar, dividir
 
 
@@ -38,4 +40,25 @@ def teste_dividir_negativo():
     numero_b = 0
     resultado_esperado = 'Não dividirás por zero'
     resultado_obtido = dividir(numero_a, numero_b)
+    assert resultado_obtido == resultado_esperado
+
+
+# Lista para uso com massa de teste
+lista_de_valores = [
+
+    (8, 7, 15),
+    (20, 30, 50),
+    (25, 0, 25),
+    (-5, 12, 7),
+    (6, -3, 3)
+]
+
+
+@pytest.mark.parametrize('numero_a, numero_b, resultado_esperado', lista_de_valores)
+def teste_somar_leitura_de_lista(numero_a, numero_b, resultado_esperado):
+    # Quando trabalhar com  LISTAS não pode ter numeros fixados
+    # 1 - Configura
+    # Utilizamos a lista  como massa de teste
+
+    resultado_obtido = somar(numero_a, numero_b)
     assert resultado_obtido == resultado_esperado
