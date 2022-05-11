@@ -1,6 +1,23 @@
+import csv
+
 import pytest
 
 from main import somar, subtrair, multiplicar, dividir
+
+
+def ler_csv(arquivo_csv):
+    dados_csv = []
+    try:
+        with open(arquivo_csv, newline='') as massa:
+            campos = csv.reader(massa, delimiter=',')
+            next(campos)
+            for linha in campos:
+                dados_csv.append(linha)
+        return dados_csv
+    except FileNotFoundError:
+        print(f'Arquivo não encontrado: {arquivo_csv}')
+    except Exception as fail:
+        print(f'Falha imprevista: {fail}')
 
 
 def teste_somar():
@@ -45,7 +62,7 @@ def teste_dividir_negativo():
 
 # Lista para uso com massa de teste
 lista_de_valores = [
-
+    # Tupla
     (8, 7, 15),
     (20, 30, 50),
     (25, 0, 25),
@@ -54,11 +71,8 @@ lista_de_valores = [
 ]
 
 
-@pytest.mark.parametrize('numero_a, numero_b, resultado_esperado', lista_de_valores)
-def teste_somar_leitura_de_lista(numero_a, numero_b, resultado_esperado):
-    # Quando trabalhar com  LISTAS não pode ter numeros fixados
-    # 1 - Configura
-    # Utilizamos a lista  como massa de teste
-
-    resultado_obtido = somar(numero_a, numero_b)
-    assert resultado_obtido == resultado_esperado
+@pytest.mark.parametrize('numero_a, numero_b, resultado_esperado', ler_csv(
+    'C:\\Users\\marcos.mota\\PycharmProjects\\134inicial\\vendors\\csv\\massa_teste_somar_positivo.csv'))
+def teste_somar_leitura_de_csv(numero_a, numero_b, resultado_esperado):
+    resultado_obtido = somar(int(numero_a), int(numero_b))
+    assert resultado_obtido == int(resultado_esperado)

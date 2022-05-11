@@ -35,5 +35,3 @@ if __name__ == '__main__':
 
     resultado = multiplicar(30, 2)
     print(f'O multiplicação é: {resultado}')
-
-
