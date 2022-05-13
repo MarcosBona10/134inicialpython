@@ -84,7 +84,7 @@ def teste_dividir_positivo():
     'C:\\Users\\marcos.mota\\PycharmProjects\\134inicial\\vendors\\csv\\massa_teste_dividir_negativo.csv'))
 def teste_dividir_negativo_leitura_csv(numero_a, numero_b, resultado_esperado):
     resultado_obtido = dividir(int(numero_a), int(numero_b))
-    assert resultado_obtido == (resultado_esperado)
+    assert resultado_obtido == resultado_esperado
 
 
 def teste_dividir_negativo():
