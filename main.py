@@ -18,7 +18,7 @@ def dividir(numero_a, numero_b):
     try:
         return numero_a / numero_b
     except ZeroDivisionError:
-        return 'Não dividirás por zero'
+        return 'Nao dividiras por zero'
 
 
 if __name__ == '__main__':

@@ -84,13 +84,13 @@ def teste_dividir_positivo():
     'C:\\Users\\marcos.mota\\PycharmProjects\\134inicial\\vendors\\csv\\massa_teste_dividir_negativo.csv'))
 def teste_dividir_negativo_leitura_csv(numero_a, numero_b, resultado_esperado):
     resultado_obtido = dividir(int(numero_a), int(numero_b))
-    assert resultado_obtido == int(resultado_esperado)
+    assert resultado_obtido == (resultado_esperado)
 
 
 def teste_dividir_negativo():
     numero_a = 27
     numero_b = 0
-    resultado_esperado = 'Não dividirás por zero'
+    resultado_esperado = 'Nao dividiras por zero'
     resultado_obtido = dividir(numero_a, numero_b)
     assert resultado_obtido == resultado_esperado
 
