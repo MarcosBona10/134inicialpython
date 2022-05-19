@@ -1,0 +1,20 @@
+{
+  "id": 5416173,
+  "category": {
+    "id": 1,
+    "name": "Pitbull"
+  },
+  "name": "Kratos",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "vacinado"
+    }
+  ],
+  "status": "available"
+}
+
+

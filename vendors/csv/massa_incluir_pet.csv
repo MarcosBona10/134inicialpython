@@ -1,0 +1,5 @@
+pet_id,category_id,category_name,pet_name,tags_id,tags_name,status
+541617,1,Pitbull,Kratos,1,vacinado,available
+541618,2,Persa,Felix,2,castrado,available
+541619,3,Salmao,Dori,3,registrado,available
+541620,2,Persa,Jay,1,vacinado,available
