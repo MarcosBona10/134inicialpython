@@ -32,7 +32,7 @@ def teste_incluir_pet():
     # Valida
     print(resultado_obtido)
     corpo_do_resultado_obtido = resultado_obtido.json()
-    print(corpo_do_resultado_obtido)
+    print(json.dumps(corpo_do_resultado_obtido, indent=4))
 
     assert resultado_obtido.status_code == status_code_esperado
     assert corpo_do_resultado_obtido['id'] == pet_id_esperado
@@ -81,7 +81,7 @@ def teste_alterar_pet():
     pet_nome_esperado = "Kratos"
     pet_nome_categoria_esperado = "Pitbull"
     pet_nome_tag_esperado = "vacinado"
-    pet_status_esperado = 'pending'
+    pet_status_esperado = 'placed'
 
     # Executa
     resultado_obtido = requests.put(
@@ -159,7 +159,7 @@ def teste_incluir_pet_em_massa(pet_id, category_id, category_name, pet_name, tag
 
     # Resultado esperado
     # Os dados de entrada também servirão como resultados
-    # Esperados, visto que o retorno é um eco
+    # esperados, visto que o retorno é um eco
     status_code_esperado = 200
 
     # Executa
